@@ -4,30 +4,41 @@ import "react-slideshow-image/dist/styles.css";
 
 const fadeImages = [
   {
-    url: "https://cdn.moveek.com/storage/media/cache/large/6916e739a8387189858531.png",
-    caption: "First Slide",
+    url: "slide1.png",
+    caption: "Ngược dòng thời gian",
   },
   {
-    url: "https://i.imgur.com/mIwN0c1.jpeg",
-    caption: "Second Slide",
+    url: "slide2.png",
+    caption: "Mặt nạ của vợ",
   },
   {
-    url: "https://i.imgur.com/Y5KtvgL.png",
-    caption: "Third Slide",
+    url: "slide3.png",
+    caption: "Tôi làm bảo mẫu ở lảnh cung",
+  },
+  {
+    url: "slide4.png",
+    caption: "Supper men đại chiến khủng long bạo chúa",
   },
 ];
 
 const Banner = () => {
   return (
-    <div className="slide-container">
+    <div className="slide-container relative">
       <Fade>
         {fadeImages.map((fadeImage, index) => (
-          <div key={index}>
+          <div key={index} className="relative">
+            {/* Ảnh */}
             <img
               style={{ width: "100%", objectFit: "cover" }}
               src={fadeImage.url}
+              className="h-[400px]"
             />
-            <h2>{fadeImage.caption}</h2>
+
+            <div className="absolute inset-0 bg-black/50"></div>
+
+            <h2 className="absolute bottom-20 left-20 text-white text-2xl font-bold">
+              {fadeImage.caption}
+            </h2>
           </div>
         ))}
       </Fade>

@@ -14,7 +14,7 @@ import Navbar from "./components/user/Navbar.jsx";
 function App() {
   return (
     <>
-      <div className="px-[1vw]">
+      <div className="">
         <Navbar />
         <Routes>
           {/* Session User */}
