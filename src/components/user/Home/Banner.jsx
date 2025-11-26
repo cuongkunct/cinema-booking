@@ -22,6 +22,7 @@ const fadeImages = [
 ];
 
 const Banner = () => {
+  
   return (
     <div className="slide-container relative">
       <Fade>
@@ -36,7 +37,7 @@ const Banner = () => {
 
             <div className="absolute inset-0 bg-black/50"></div>
 
-            <h2 className="absolute bottom-20 left-20 text-white text-2xl font-bold">
+            <h2 className="absolute bottom-10 left-10 text-white text-4xl font-extrabold drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]">
               {fadeImage.caption}
             </h2>
           </div>
