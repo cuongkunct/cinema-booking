@@ -7,6 +7,8 @@ SETUP:
 2. Install react dom/ Tailwind CSS / Redux /axios
    npm i react-router-dom @reduxjs/toolkit react-redux axios tailwindcss @tailwindcss/vite
 
+3. Form
+   npm install formik yup
 
 git init
 git add README.md
