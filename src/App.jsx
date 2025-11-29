@@ -4,7 +4,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./pages/user/Home/Home.jsx";
 import About from "./pages/user/About/About.jsx";
 import Profile from "./pages/user/Profile/Profile.jsx";
-import Movie from "./pages/user/Movie/Movie.jsx";
+import MovieDetails from "./pages/user/Movie/MovieDetails.jsx";
 import Contact from "./pages/user/Contact/Contact.jsx";
 import ForgotPassword from "./pages/user/Auth/ForgotPassword.jsx";
 import Login from "./pages/user/Auth/Login.jsx";
@@ -27,7 +27,7 @@ function App() {
             </Route>
             <Route path="about" element={<About />} />
             <Route path="profile" element={<Profile />} />
-            <Route path="movie" element={<Movie />} />
+            <Route path="movie" element={<MovieDetails />} />
             <Route path="contact" element={<Contact />} />
           </Route>
           {/* Session Admin */}

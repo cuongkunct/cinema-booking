@@ -1,20 +1,22 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { use } from "react";
+
+export const backendUrl = import.meta.env.VITE_BACKEND_URL;
+console.log(backendUrl);
 
 const login = createAsyncThunk(
   "QuanLyNguoiDung/DangNhap",
   async (userData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "https://movienew.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap",
+        backendUrl + "/api/QuanLyNguoiDung/DangNhap",
         {
           taiKhoan: userData.taiKhoan,
           matKhau: userData.matKhau,
         },
         {
           headers: {
-            TokenCybersoft: userData.cyberSoftToken, // ← THÊM Ở ĐÂY
+            TokenCybersoft: userData.cyberSoftToken,
           },
         }
       );
