@@ -12,8 +12,6 @@ export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user, loading, error } = useSelector((state) => state.auth);
-  console.log("User:   ", user);
-  const [userLogin, setUserLogin] = useState(localStorage.getItem("user"));
 
   const loginForm = useFormik({
     initialValues: {
@@ -34,7 +32,7 @@ export default function Login() {
         const result = await dispatch(login(values)).unwrap();
 
         if (result.statusCode === 200) {
-          navigate("/account");
+          navigate("/"); // Chuyển tới profile ở đây
         } else {
           alert(result.message || "Login failed! Token invalid or user exists");
         }

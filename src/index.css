@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
-body {
-  font-family: "Roboto Condensed", sans-serif;
+html,
+body,
+* {
+  font-family: "Mozilla Headline", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
+
 a.active hr {
   display: block;
 }

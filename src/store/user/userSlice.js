@@ -5,13 +5,16 @@ const userSlice = createSlice({
   name: "user",
   initialState: {
     user: null,
+    cyberSoftToken: null,
     loading: false,
     error: null,
   },
   reducers: {
     logout: (state) => {
       state.user = null;
+      state.cyberSoftToken = null;
       localStorage.removeItem("user");
+      localStorage.removeItem("cyberSoftToken");
     },
   },
   extraReducers: (builder) => {
@@ -19,6 +22,12 @@ const userSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload;
+        // LẤY lại token từ tham số userData
+        const token = action.meta.arg.cyberSoftToken;
+        // Lưu token vào Redux
+        state.cyberSoftToken = token;
+        // Lưu vào localStorage
+        localStorage.setItem("cyberSoftToken", token);
         localStorage.setItem("user", JSON.stringify(action.payload));
       })
       .addCase(login.rejected, (state, action) => {
